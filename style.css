@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #6046F3; 
+    text-align: center;
+}
+tml, body {
+    background-image: url(./image/Vegetta.jpg);
+    background-color:#6046F3 ; 
+    font-family:serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+nav, section, footer {
+    background-color:#CAABFB ;
+    border: 4px solid #9579F7; 
+    margin: 1rem auto;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 80%;
+}
+
+nav h1, section h2, footer h3 {
+    color: #2C13EF;
+    font-size: 1.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 1rem auto;
+    background-color: #FFDEFF; 
+    color: #2C13EF;
+}
+
+th, td {
+    border: 2px solid #9579F7; 
+    padding: 10px 20px;
+    text-align: center;
+}
+
+a {
+    color:#2C13EF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #6046F3;
+    background-color: #FFDEFF;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+
+.link {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #CAABFB; 
+    color: #2C13EF;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.figma-link:hover {
+    background-color: #FFDEFF;
+    color: #CAABFB;
+    transition: 0.3s;
+}
