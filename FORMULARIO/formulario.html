@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de formulario</title>
+    <script src="./JS/validacion.js"></script>
+</head>
+<body>
+    <p>Todos los formularios en la web, manejan metodos, para el envio de diferentes peticiones que realiza el usuario consdierando la arquitectura cliente servidor, el manejo de la soeticiones se hace por medio del protocoll http y actualmente por https cada peticion debe de ser atendida en un tiempo de respuesta conforme al modelo TCP/IP. Los metydos principales de los formularios son: 
+    <li>
+        <ol>
+            GET: <h1>Este metodo se ecnarga de enviar la inofrmacion del formulario por medio de la salida estandar (conocida como url), del navegador esto propicia que puedan existir inyecciones de codigo realizando violaciones a la seguridad del sistema</h1>
+        </ol>
+        <ol>
+            POST: <h1>Este metodo se encarga de envbiar la informacion para poder resgistrar un cambio o un nuevo registro dentro del sistema enviandola igual, por el metodo estandar, pero mediante un ocultamiento, esto significa que no es visible para el horario lo que nos ofrece un mayor grado de seguridad en el manejo de la informacion</h1>
+        </ol>
+    </li>
+    </p>
+    <br>
+    <p>En resumen los metodos son:
+       <li>
+         <ul>Get: Sirve para enviar y realizar operaciones de lectura o consulta</ul>
+        <ul>Post: Sirve para enviar info de un recurso al servidor, con el fin de registrarlo</ul>
+        <ul>Delete: Sirve para eliminar un recurso específico dentro del servidor obteniendo una respuesta de actualización</ul>
+        <ul>Put: Sirve para almacenar la info de un recurso particular y conectarse al servicio paravrealizar la actyalización</ul>
+        <ul>Head: Sirve para regresar el codigo de puesta de cualquier cabecera HTTP asociada a un recurso</ul>
+       </li> 
+    </p>
+
+    <div class="container-form">
+        <form method="get" id="formulario" name="formulario" action="">
+            <label for="">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa aqui tu nombre">
+            <br>
+
+            <label for="">Edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Ingresa aqui tu edad">
+            <br>
+
+            <label for="">Email</label>
+            <input type="email" id="corre" name="corre" placeholder="Ingresa aqui tu correo">
+            <br>
+
+            <input type="submit" name="enviar" value="Enviar Registro" id="">
+            <br>
+
+            <input type="reset" name="borrar" value="Borrar Datos" id="">
+            <br>
+
+
+            
+        </form>
+    </div>
+</body>
+</html>
