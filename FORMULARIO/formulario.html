@@ -4,29 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de formulario</title>
+    <link rel="stylesheet" href="formulario.css">
     <script src="./JS/validacion.js"></script>
 </head>
 <body>
+     <div class="container-main">
+        <div class="container-header">
+            <HEader>
+                <nav><h1>Formulario</h1></nav>
+            </HEader>
+        </div>
+    </div class = "texto">
+
+    <div>
     <p>Todos los formularios en la web, manejan metodos, para el envio de diferentes peticiones que realiza el usuario consdierando la arquitectura cliente servidor, el manejo de la soeticiones se hace por medio del protocoll http y actualmente por https cada peticion debe de ser atendida en un tiempo de respuesta conforme al modelo TCP/IP. Los metydos principales de los formularios son: 
+    <br>
+
+
     <li>
         <ol>
-            GET: <h1>Este metodo se ecnarga de enviar la inofrmacion del formulario por medio de la salida estandar (conocida como url), del navegador esto propicia que puedan existir inyecciones de codigo realizando violaciones a la seguridad del sistema</h1>
+            <h2>GET:</h2> Este metodo se ecnarga de enviar la inofrmacion del formulario por medio de la salida estandar (conocida como url), del navegador esto propicia que puedan existir inyecciones de codigo realizando violaciones a la seguridad del sistema
         </ol>
         <ol>
-            POST: <h1>Este metodo se encarga de envbiar la informacion para poder resgistrar un cambio o un nuevo registro dentro del sistema enviandola igual, por el metodo estandar, pero mediante un ocultamiento, esto significa que no es visible para el horario lo que nos ofrece un mayor grado de seguridad en el manejo de la informacion</h1>
+            <h2>POST:</h2>Este metodo se encarga de envbiar la informacion para poder resgistrar un cambio o un nuevo registro dentro del sistema enviandola igual, por el metodo estandar, pero mediante un ocultamiento, esto significa que no es visible para el horario lo que nos ofrece un mayor grado de seguridad en el manejo de la informacion
         </ol>
     </li>
     </p>
     <br>
-    <p>En resumen los metodos son:
+    <p><h2>En resumen los metodos son:</h2>
        <li>
-         <ul>Get: Sirve para enviar y realizar operaciones de lectura o consulta</ul>
-        <ul>Post: Sirve para enviar info de un recurso al servidor, con el fin de registrarlo</ul>
-        <ul>Delete: Sirve para eliminar un recurso específico dentro del servidor obteniendo una respuesta de actualización</ul>
-        <ul>Put: Sirve para almacenar la info de un recurso particular y conectarse al servicio paravrealizar la actyalización</ul>
-        <ul>Head: Sirve para regresar el codigo de puesta de cualquier cabecera HTTP asociada a un recurso</ul>
+         <ul><b>Get:</b> Sirve para enviar y realizar operaciones de lectura o consulta</ul>
+        <ul><b>Post:</b> Sirve para enviar info de un recurso al servidor, con el fin de registrarlo</ul>
+        <ul><b>Delete:</b> Sirve para eliminar un recurso específico dentro del servidor obteniendo una respuesta de actualización</ul>
+        <ul><b>Put:</b> Sirve para almacenar la info de un recurso particular y conectarse al servicio paravrealizar la actyalización</ul>
+        <ul><b>Head:</b> Sirve para regresar el codigo de puesta de cualquier cabecera HTTP asociada a un recurso</ul>
        </li> 
     </p>
+    </div>
 
     <div class="container-form">
         <form method="get" id="formulario" name="formulario" action="">
