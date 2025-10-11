@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+        <div class="container" >
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para el calculo de precio de una prenda con el 15% de descuento</label>
+                <br>
+                <div class="container-table" >
+                    <table class="table" >
+                        <tr>
+                            <td>
+                                Introduce el precio de la prenda:
+                            </td>
+                            <td>
+                                <input type="text" name="cantidad" id="precioi" onkeypress="return validarp(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Precio" name="enviar" onclick="descuento()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                El precio final de la prenda es: 
+                            </td>
+                            <td>
+                                <input type="text" name="sueldoi" id="finali" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+ <script src="./js/funciones3.js" ></script>   
+</body>
+</html>

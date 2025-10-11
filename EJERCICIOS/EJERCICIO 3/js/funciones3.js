@@ -1,4 +1,4 @@
-function validarn(e){
+function validarp(e){
     var teclado = (document.all)? e.keyCode : e.which;
     if (teclado == 8) return true;
     var patron = /[0-9\d .]/;
@@ -7,38 +7,26 @@ function validarn(e){
     return patron.test(codigo);
 }
 
-function validarv(e){
-    var teclado = (document.all)? e.keyCode : e.which;
-    if (teclado == 8) return true;
-    var patron = /[0-9\d .]/;
+function descuento(){
+    var precio = document.getElementById("precioi").value;
 
-    var codigo = String.fromCharCode(teclado);
-    return patron.test(codigo);
-}
-
-function sumatoria(){
-    var valoruno = document.getElementById("cantidadi").value;
-    var valordos = document.getElementById("ventasi").value;
-    
-    var parsev = parseFloat(valoruno);
-    var parses = parseFloat(valordos);
-    alert(parsev);
-    alert(parses);
-
-    var comision= (parsev *0.10) * parses
-    alert(comision);0
-    var total = comision + parsev;
+    var parseo = parseFloat(precio);
+    alert(parseo);
+    var descuento = parseo * 0.15
+    alert(descuento);
+    var total = parseo - descuento;
     alert(total);
-    document.getElementById("saldoi").value = "$ " + total; //LIMITE A 2 DECIMALES
+    document.getElementById("finali").value = "$ " + total; //LIMITE A 2 DECIMALES
 }
 
 function borrari(){
     document.getElementById("saldoi").value = "";
     document.getElementById("cantidadi").value = "";
-    document.getElementById("ventasi").value = "";
 }
 
 /*
+Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses
+
 
 2 se deben de ingresar 3 ventas, un sueldo base, y despues calcular el monto total, debe de aparecer cuanto cobra por comision y la suma ttoal
 
