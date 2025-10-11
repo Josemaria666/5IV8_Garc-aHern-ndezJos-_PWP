@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+         <div class="container" >
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para la sumatoria de sueldos</label>
+                <br>
+                <div class="container-table" >
+                    <table class="table" >
+                        <tr>
+                            <td>
+                                Introduce tu sueldo: 
+                            </td>
+                            <td>
+                                <input type="text" name="cantidad" id="cantidadi" onkeypress="return validarn(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Introduce tus ventas: </td>
+                            <td>
+                                <input type="text" name="ventas" id="ventasi" onkeypress="return validarv(event)"> 
+                            </td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Sueldo" name="enviar" onclick="sumatoria()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Su sueldo total con el sus ventas es de: 
+                            </td>
+                            <td>
+                                <input type="text" name="sueldoi" id="saldoi" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+<script src="./js/funciones2.js" ></script>           
+</body>
+</html>
