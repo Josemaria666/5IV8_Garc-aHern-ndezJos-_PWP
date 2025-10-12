@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+        <div class="container" >
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para el porcentaje de alumnas y alumnos</label>
+                <br>
+                <div class="container-table" >
+                    <table class="table" >
+                        <tr>
+                            <td>
+                                Introduce la cantidad de alumnos en tu salon:
+                            </td>
+                            <td>
+                                <input type="text" name="cantidadm" id="cantidadm" onkeypress="return validarm(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Introduce la cantidad de alumnas en tu salon:
+                            </td>
+                            <td>
+                                <input type="text" name="cantidadf" id="cantidadf" onkeypress="return validarf(event)">
+                            </td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Cantidad" name="enviar" onclick="suma()">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                La cantidad de total alumnos es: 
+                            </td>
+                            <td>
+                                <input type="text" name="cantidad" id="cantidad" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Porcentaje" name="enviar" onclick="porcentaje()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                El porcentaje de alumnos es: 
+                            </td>
+                            <td>
+                                <input type="text" name="alumnas" id="alumnas" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                El porcentaje de alumnas es: 
+                            </td>
+                            <td>
+                                <input type="text" name="alumnos" id="alumnos" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                         </tr>
+                        
+
+                        
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+ <script src="./js/funciones5.js" ></script>   
+</body>
+</html>
