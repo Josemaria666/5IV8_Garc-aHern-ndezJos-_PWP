@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+         <div class="container" >
+            <form method="post" name="formulario" action="">
+                <label for="">Formulario para el promedio final</label>
+                <br>
+                <div class="container-table" >
+                    <table class="table" >
+
+
+                        <tr>
+                            <td>
+                                Introduce tu calificacion del primer parcial: 
+                            </td>
+                            <td>
+                                <input type="text" name="primero" id="cal1" onkeypress="return validarcal1(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Introduce tu calificacion del segundo parcial: </td>
+                            <td>
+                                <input type="text" name="segundo" id="cal2" onkeypress="return validarcal2(event)"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Introduce tu calificacion del tercer parcial</td>
+                            <td>
+                                <input type="text" name="tercero" id="cal3" onkeypress="return validarcal3(event)"> 
+                            </td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Promedio de parciales" name="enviar" onclick="promedio()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Su promedio es de: 
+                            </td>
+                            <td>
+                                <input type="text" name="calfinal" id="calfinal" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                         </tr>
+
+                        <tr>
+                            <td>
+                                Introduce tu calificacion del examen: 
+                            </td>
+                            <td>
+                                <input type="text" name="cantidad" id="examen" onkeypress="return validarexamen(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Introduce tu calificacion del trabajo final: </td>
+                            <td>
+                                <input type="text" name="ventas" id="trabajo" onkeypress="return validartrabajo(event)"> 
+                            </td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Calcular Promedio final" name="enviar" onclick="final()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Su promedio final es de: 
+                            </td>
+                            <td>
+                                <input type="text" name="promediofinal" id="promediofinal" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+<script src="./js/funciones4.js" ></script>           
+</body>
+</html>

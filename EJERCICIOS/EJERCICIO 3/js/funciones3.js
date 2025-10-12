@@ -16,7 +16,7 @@ function descuento(){
     alert(descuento);
     var total = parseo - descuento;
     alert(total);
-    document.getElementById("finali").value = "$ " + total; //LIMITE A 2 DECIMALES
+    document.getElementById("finali").value = "$" + total; //LIMITE A 2 DECIMALES
 }
 
 function borrari(){
