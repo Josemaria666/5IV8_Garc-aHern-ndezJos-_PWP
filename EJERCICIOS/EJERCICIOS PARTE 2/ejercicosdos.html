@@ -54,6 +54,62 @@
                 </div>
             </form>
 </div>
+
+<div class="container">
+    <h1>Ejercicio 2</h1>
+       <form method="post" name="formulario" action="">
+                <label for="">Formulario para numero mayor</label>
+                <br>
+                <div class="container-table" >
+                    <table class="table" >
+                        <tr>
+                            <td>
+                                Introudce el primer numero  
+                            </td>
+                            <td>
+                                <input type="text" name="numero1" id="numuno" onkeypress="return validarn1(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Introudce el segundo numero  
+                            </td>
+                            <td>
+                                <input type="text" name="numero2" id="numdos" onkeypress="return validarn2(event)">
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                Introudce el tercer numero  
+                            </td>
+                            <td>
+                                <input type="text" name="numero3" id="numtres" onkeypress="return validarn3(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Realizar comparacion" name="enviar" onclick="comparacion()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                El resultado de su comparacion es: 
+                            </td>
+                            <td>
+                                <input type="text" name="resultadoi" id="comparari" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+</div>
 <script src="funcionesdos.js"></script>
 
 </body>
