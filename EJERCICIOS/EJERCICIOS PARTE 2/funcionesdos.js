@@ -189,7 +189,6 @@ function utilidad() {
         alert("Por favor, introduce una antigüedad válida en años.");
         return;
     }
-
     let porcentaje = 0;
 
     if (antiguedad < 1) {
