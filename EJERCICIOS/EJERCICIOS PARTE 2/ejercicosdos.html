@@ -163,6 +163,55 @@
 </div>
 
 
+<div class="container">
+    <h1>Ejercicio 4</h1>
+    <form method="post" name="formulario4" action="">
+        <label for="">Formulario para calcular la utilidad anual del trabajador</label>
+        <br>
+        <div class="container-table">
+            <table class="table">
+                <tr>
+                    <td>
+                        Introduce el salario mensual del trabajador
+                    </td>
+                    <td>
+                        <input type="text" name="salario" id="salarioi" onkeypress="return validarsalario(event)">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Introduce los años de antigüedad del trabajador
+                    </td>
+                    <td>
+                        <input type="text" name="antiguedad" id="antiguedadi" onkeypress="return validarantiguedad(event)">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="Calcular utilidad" name="enviar" onclick="utilidad()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        La utilidad anual correspondiente es:
+                    </td>
+                    <td>
+                        <input type="text" name="utilidad" id="utilidadi" readonly="readonly" class="input_text">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="Borrar Datos" name="borrar" onclick="borrariv()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+
 <script src="funcionesdos.js"></script>
 
 </body>

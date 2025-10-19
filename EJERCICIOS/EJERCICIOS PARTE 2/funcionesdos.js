@@ -153,3 +153,64 @@ function borrari() {
     document.getElementById("pagoi").value = "";
     document.getElementById("sueldoi").value = "";
 }
+
+
+
+function validarsalario(e) {
+    e = e || window.event;
+    var tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla === 8 || tecla === 46 || tecla === 9 || tecla === 13 || (tecla >= 37 && tecla <= 40)) return true;
+
+    var char = String.fromCharCode(tecla);
+    var patron = /[0-9.]/;
+    return patron.test(char);
+}
+
+function validarantiguedad(e) {
+    e = e || window.event;
+    var tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla === 8 || tecla === 46 || tecla === 9 || tecla === 13 || (tecla >= 37 && tecla <= 40)) return true;
+
+    var char = String.fromCharCode(tecla);
+    var patron = /[0-9.]/;
+    return patron.test(char);
+}
+
+function utilidad() {
+    let salario = parseFloat(document.getElementById("salarioi").value);
+    let antiguedad = parseFloat(document.getElementById("antiguedadi").value);
+
+    if (isNaN(salario) || salario <= 0) {
+        alert("Por favor, introduce un salario mensual válido.");
+        return;
+    }
+
+    if (isNaN(antiguedad) || antiguedad < 0) {
+        alert("Por favor, introduce una antigüedad válida en años.");
+        return;
+    }
+
+    let porcentaje = 0;
+
+    if (antiguedad < 1) {
+        porcentaje = 0.05; // 5%
+    } else if (antiguedad >= 1 && antiguedad < 2) {
+        porcentaje = 0.07; // 7%
+    } else if (antiguedad >= 2 && antiguedad < 5) {
+        porcentaje = 0.10; // 10%
+    } else if (antiguedad >= 5 && antiguedad < 10) {
+        porcentaje = 0.15; // 15%
+    } else if (antiguedad >= 10) {
+        porcentaje = 0.20; // 20%
+    }
+
+    let utilidadAnual = salario * porcentaje * 12;
+
+    document.getElementById("utilidadi").value = utilidadAnual.toFixed(2);
+}
+
+function borrariv() {
+    document.getElementById("salarioi").value = "";
+    document.getElementById("antiguedadi").value = "";
+    document.getElementById("utilidadi").value = "";
+}
