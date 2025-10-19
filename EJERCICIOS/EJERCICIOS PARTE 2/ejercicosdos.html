@@ -55,6 +55,8 @@
             </form>
 </div>
 
+
+
 <div class="container">
     <h1>Ejercicio 2</h1>
        <form method="post" name="formulario" action="">
@@ -110,6 +112,57 @@
                 </div>
             </form>
 </div>
+
+
+<div class="container">
+    <h1>Ejercicio 3</h1>
+       <form method="post" name="formulario" action="">
+                <label for="">Formulario para realizar operaciones</label>
+                <br>
+                <div class="container-table" >
+                    <table class="table" >
+                        <tr>
+                            <td>
+                                Introduce el primer numero de horas trabajadas
+                            </td>
+                            <td>
+                                <input type="text" name="horas" id="horasid" onkeypress="return validarhoras(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Introduce el pago por hora trabajada
+                            </td>
+                            <td>
+                                <input type="text" name="pago" id="pagoid" onkeypress="return validarpago(event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Realizar operacion" name="enviar" onclick="sueldof()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                La sumatoria de su sueldo es: 
+                            </td>
+                            <td>
+                                <input type="text" name="sueldoi" id="sueldoid" readonly="readonly" class="input_text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+</div>
+
+
 <script src="funcionesdos.js"></script>
 
 </body>

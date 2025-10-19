@@ -109,7 +109,47 @@ function comparacion(){
     }
 }
 
-function borrari(){
-    document.getElementById("saldoi").value = "";
-    document.getElementById("cantidadi").value = "";
+
+
+function validarhoras(e) { 
+    var teclado = (document.all) ? e.keyCode : e.which;
+    if (teclado == 8) return true;
+    var patron = /[0-9.]/;
+    var codigo = String.fromCharCode(teclado);
+    return patron.test(codigo);
+}
+
+function validarpago(e) {
+    var teclado = (document.all) ? e.keyCode : e.which;
+    if (teclado == 8) return true;
+    var patron = /[0-9.]/;
+    var codigo = String.fromCharCode(teclado);
+    return patron.test(codigo);
+}
+
+function sueldof(){
+    let horas = parseFloat(document.getElementById("horasid").value);
+    let pago = parseFloat(document.getElementById("pagoid").value);
+    let sueldo = 0;
+
+    if (parsehrs > 40) {
+        let extra = horas - 40;
+        if (extra > 8) {
+            let dobles = 8;
+            let triples = extra - 8;
+            sueldo = (40 * pago) + (dobles * pago * 2) + (triples * pago * 3);
+        } else {
+            sueldo = (40 * pago) + (extra * pago * 2);
+        }
+    } else {
+        sueldo = horas * pago;
+    }
+
+    document.getElementById("sueldoid").value = sueldo.toFixed(2);
+}
+
+function borrari() {
+    document.getElementById("horasi").value = "";
+    document.getElementById("pagoi").value = "";
+    document.getElementById("sueldoi").value = "";
 }
