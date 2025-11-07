@@ -1,35 +1,38 @@
-document.getElementById("checkBtn").addEventListener("click", async () => {
-    const serverIP = document.getElementById("serverIP").value.trim();
-
-    if (!serverIP) {
-        alert("Por favor ingresa una IP de servidor.");
+btn.addEventListener("click", async () => {
+    const ip = document.getElementById("serverInput").value.trim();
+    if (!ip) {
+        output.innerHTML = "Por favor ingresa una IP de servidor.";
         return;
     }
 
-    // ✅ CAMBIO 1: API nueva (antes era mcapi.us)
-    const url = `https://api.mcstatus.io/v2/status/java/${serverIP}`;
+    output.innerHTML = "Cargando...";
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(`https://api.mcsrvstat.us/2/${ip}`);
         const data = await response.json();
 
-        document.getElementById("status").innerHTML = data.online
-            ? "✅ Online"
-            : "❌ Offline";
+        if (!data || !data.online) {
+            output.innerHTML = "El servidor está offline o no existe.";
+            return;
+        }
 
-        document.getElementById("motd").innerHTML =
-            data.motd?.clean?.join(" ") || "Sin MOTD";
+        let motdClean = Array.isArray(data.motd?.clean) 
+                        ? data.motd.clean.join("") 
+                        : data.motd?.clean || "Sin MOTD";
 
-        document.getElementById("players").innerHTML =
-            data.players?.online !== undefined
-                ? `${data.players.online} / ${data.players.max}`
-                : "N/A";
+        let version = Array.isArray(data.version) 
+                      ? data.version.join(", ") 
+                      : data.version || "Desconocida";
 
-        document.getElementById("version").innerHTML =
-            data.version?.name_clean || "Desconocida";
+        output.innerHTML = `
+            <p><strong>Servidor:</strong> ${data.hostname || ip}</p>
+            <p><strong>Versión:</strong> ${version}</p>
+            <p><strong>Jugadores:</strong> ${data.players?.online || 0}/${data.players?.max || "?"}</p>
+            <p><strong>MOTD:</strong> ${motdClean}</p>
+        `;
 
     } catch (error) {
+        output.innerHTML = "Error al conectar con el servidor.";
         console.error(error);
-        alert("Error al consultar el servidor.");
     }
 });
