@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Server Status</title>
+    <title>Consulta de Servidor Minecraft (Examen Api)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
-        <h1>Minecraft Server Status</h1>
+        <h1>Estado del Servidor Minecraft</h1>
+        <p>Escribe la ip de algun servidor pde minecraft ara obtener su estado</p>
 
-        <input type="text" id="serverIP" placeholder="Ingresa la IP del servidor (ej: play.hypixel.net)">
-        <button id="checkBtn">Consultar</button>
-
-        <div class="result-box">
-            <p><strong>Estado:</strong> <span id="status">—</span></p>
-            <p><strong>MOTD:</strong> <span id="motd">—</span></p>
-            <p><strong>Jugadores:</strong> <span id="players">—</span></p>
-            <p><strong>Versión:</strong> <span id="version">—</span></p>
+        <div class="input-box">
+            <input type="text" id="serverInput" placeholder="(ej: play.hypixel.net)">
+            <button id="checkBtn">Consultar</button>
         </div>
+
+        <div id="output" class="output-box"></div>
     </div>
 
     <script src="examen.js"></script>

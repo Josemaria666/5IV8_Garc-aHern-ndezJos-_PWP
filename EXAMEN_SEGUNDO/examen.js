@@ -1,38 +1,54 @@
+console.log("JS Cargado ✅");
+
+const btn = document.getElementById("checkBtn");
+const output = document.getElementById("output");
+
 btn.addEventListener("click", async () => {
+
+    console.log("Botón clickeado ✅");
+
     const ip = document.getElementById("serverInput").value.trim();
+
     if (!ip) {
-        output.innerHTML = "Por favor ingresa una IP de servidor.";
+        output.innerHTML = "Ingresa una IP.";
         return;
     }
 
-    output.innerHTML = "Cargando...";
+    output.innerHTML = "Consultando API...";
 
     try {
         const response = await fetch(`https://api.mcsrvstat.us/2/${ip}`);
         const data = await response.json();
 
-        if (!data || !data.online) {
-            output.innerHTML = "El servidor está offline o no existe.";
+        console.log("Respuesta recibida ✅", data);
+
+        if (!data.online) {
+            output.innerHTML = "El servidor está offline.";
             return;
         }
 
-        let motdClean = Array.isArray(data.motd?.clean) 
-                        ? data.motd.clean.join("") 
-                        : data.motd?.clean || "Sin MOTD";
+        let motdClean =
+            typeof data.motd?.clean === "string"
+                ? data.motd.clean
+                : Array.isArray(data.motd?.clean)
+                ? data.motd.clean.join("")
+                : "Sin MOTD";
 
-        let version = Array.isArray(data.version) 
-                      ? data.version.join(", ") 
-                      : data.version || "Desconocida";
+        let version =
+            typeof data.version === "string"
+                ? data.version
+                : Array.isArray(data.version)
+                ? data.version.join(", ")
+                : "Desconocida";
 
         output.innerHTML = `
             <p><strong>Servidor:</strong> ${data.hostname || ip}</p>
             <p><strong>Versión:</strong> ${version}</p>
-            <p><strong>Jugadores:</strong> ${data.players?.online || 0}/${data.players?.max || "?"}</p>
+            <p><strong>Jugadores:</strong> ${data.players?.online || 0} / ${data.players?.max || "?"}</p>
             <p><strong>MOTD:</strong> ${motdClean}</p>
         `;
-
-    } catch (error) {
-        output.innerHTML = "Error al conectar con el servidor.";
-        console.error(error);
+    } catch (err) {
+        output.innerHTML = "Error al conectar con la API.";
+        console.error("ERROR ❌", err);
     }
 });
