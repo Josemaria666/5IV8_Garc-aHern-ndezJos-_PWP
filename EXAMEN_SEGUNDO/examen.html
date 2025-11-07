@@ -1,38 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Estado de un servidor de Minecraft</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server Status</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 
 <body>
 
+    <div class="container">
+        <h1>Minecraft Server Status</h1>
 
-  <main class="container">
-    <header>
-      <h1>Estado de servidor de Minecraft</h1>
-      <p class="lead">Introduce la dirección IP (y opcionalmente puerto) de un servidor de Minecraft para ver su estado online, jugadores, etc.</p>
-    </header>
+        <input type="text" id="serverIP" placeholder="Ingresa la IP del servidor (ej: play.hypixel.net)">
+        <button id="checkBtn">Consultar</button>
 
-    <section class="card">
-      <h2>Comprobar servidor</h2>
+        <div class="result-box">
+            <p><strong>Estado:</strong> <span id="status">—</span></p>
+            <p><strong>MOTD:</strong> <span id="motd">—</span></p>
+            <p><strong>Jugadores:</strong> <span id="players">—</span></p>
+            <p><strong>Versión:</strong> <span id="version">—</span></p>
+        </div>
+    </div>
 
-      <div class="row">
-        <input id="input-server" placeholder="Ejemplo: play.hypixel.net o 123.45.67.89:25565" />
-        <button id="btn-check" class="btn">Comprobar estado</button>
-      </div>
-
-      <div id="result" class="list"></div>
-    </section>
-
-    <footer>
-      <small>API usada: MCAPI.US / listado en PublicAPIs. Sin clave requerida.</small>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
