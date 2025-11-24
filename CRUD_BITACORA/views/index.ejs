@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bitácoras</title>
+  <link rel="stylesheet" href="/CRUDMYSQL/public/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="card header">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="h1">Bitácoras</div>
+        <div class="subtle">Registrar y gestionar entradas de mantenimiento</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Crear nueva bitácora</h2>
+      <form action="/bitacoras" method="POST">
+        <label>Tipo</label>
+        <select name="tipo" required>
+          <% tipos.forEach(function(t){ %>
+            <option value="<%= t %>"><%= t %></option>
+          <% }); %>
+        </select>
+
+        <label>Equipo / ID</label>
+        <input type="text" name="equipo_id" placeholder="ID de equipo">
+
+        <label>Fecha Programada</label>
+        <input type="datetime-local" name="fecha_programada">
+
+        <label>Fecha de Ejecución</label>
+        <input type="datetime-local" name="fecha_ejecucion">
+
+        <label>Tarea / Descripción</label>
+        <textarea name="tarea" rows="2"></textarea>
+
+        <label>Técnico Responsable</label>
+        <input type="text" name="tecnico">
+
+        <label>Horas / Ciclos</label>
+        <input type="text" name="horas_ciclos">
+
+        <label>Estado después del servicio</label>
+        <input type="text" name="estado_servicio">
+
+        <label>¿Muestra para análisis?</label>
+        <input type="checkbox" name="muestra_analisis">
+
+        <label>Resultados / Observaciones</label>
+        <textarea name="resultados" rows="2"></textarea>
+
+        <label>Próximo cambio estimado</label>
+        <input type="datetime-local" name="proximo_cambio">
+
+        <label>Observaciones</label>
+        <textarea name="observaciones" rows="2"></textarea>
+
+        <button class="btn" type="submit">Guardar Bitácora</button>
+      </form>
+    </div>
+
+    <div class="card card-list" style="margin-top:18px;">
+      <h2>Entradas recientes</h2>
+      <div class="list-wrap">
+        <% if (bitacoras.length === 0) { %>
+          <p class="subtle">No hay entradas todavía.</p>
+        <% } %>
+        <% bitacoras.forEach(function(b){ %>
+          <div class="student-item">
+            <div class="student-left">
+              <div class="avatar"><%= b.id %></div>
+              <div class="student-meta">
+                <div class="name"><%= b.tipo %> — <strong><%= b.equipo_id || '—' %></strong></div>
+                <div class="meta"><%= b.tarea ? b.tarea.substring(0,80) : (b.observaciones ? b.observaciones.substring(0,80) : '') %></div>
+                <div class="meta">Fecha: <%= b.fecha_ejecucion ? new Date(b.fecha_ejecucion).toLocaleString() : (b.fecha_programada ? new Date(b.fecha_programada).toLocaleString() : '-') %></div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <a class="link" href="/bitacoras/edit/<%= b.id %>">Editar</a>
+              <a class="link danger" href="/bitacoras/delete/<%= b.id %>" onclick="return confirm('Eliminar entrada #<%= b.id %>?')">Eliminar</a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+S
