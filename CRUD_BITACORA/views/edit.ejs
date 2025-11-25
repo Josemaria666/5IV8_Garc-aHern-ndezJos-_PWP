@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Editar Bitácora</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="card header">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="h1">Editar Bitácora</div>
+        <div class="subtle">ID: <%= bitacora.id %></div>
+      </div>
+    </header>
+
+    <div class="card">
+      <form action="/bitacoras/update/<%= bitacora.id %>" method="POST">
+        <label>Tipo</label>
+        <select name="tipo" required>
+          <% tipos.forEach(function(t){ %>
+            <option value="<%= t %>" <%= bitacora.tipo === t ? 'selected' : '' %>><%= t %></option>
+          <% }); %>
+        </select>
+
+        <label>Equipo / ID</label>
+        <input type="text" name="equipo_id" value="<%= bitacora.equipo_id || '' %>">
+
+        <label>Fecha Programada</label>
+        <input type="datetime-local" name="fecha_programada" value="<%= bitacora.fecha_programada ? new Date(bitacora.fecha_programada).toISOString().slice(0,16) : '' %>">
+
+        <label>Fecha de Ejecución</label>
+        <input type="datetime-local" name="fecha_ejecucion" value="<%= bitacora.fecha_ejecucion ? new Date(bitacora.fecha_ejecucion).toISOString().slice(0,16) : '' %>">
+
+        <label>Tarea / Descripción</label>
+        <textarea name="tarea" rows="2"><%= bitacora.tarea || '' %></textarea>
+
+        <label>Técnico Responsable</label>
+        <input type="text" name="tecnico" value="<%= bitacora.tecnico || '' %>">
+
+        <label>Horas / Ciclos</label>
+        <input type="text" name="horas_ciclos" value="<%= bitacora.horas_ciclos || '' %>">
+
+        <label>Estado después del servicio</label>
+        <input type="text" name="estado_servicio" value="<%= bitacora.estado_servicio || '' %>">
+
+        <label>¿Muestra para análisis?</label>
+        <input type="checkbox" name="muestra_analisis" <%= bitacora.muestra_analisis ? 'checked' : '' %> >
+
+        <label>Resultados / Observaciones</label>
+        <textarea name="resultados" rows="2"><%= bitacora.resultados || '' %></textarea>
+
+        <label>Próximo cambio estimado</label>
+        <input type="datetime-local" name="proximo_cambio" value="<%= bitacora.proximo_cambio ? new Date(bitacora.proximo_cambio).toISOString().slice(0,16) : '' %>">
+
+        <label>Observaciones</label>
+        <textarea name="observaciones" rows="2"><%= bitacora.observaciones || '' %></textarea>
+
+        <div style="margin-top:12px;">
+          <button class="btn" type="submit">Actualizar</button>
+          <a class="btn ghost" href="/">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

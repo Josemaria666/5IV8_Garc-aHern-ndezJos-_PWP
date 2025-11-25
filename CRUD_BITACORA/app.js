@@ -10,16 +10,18 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+//css
+app.use(express.static(__dirname + '/public'));
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-  host: process.env.BD_HOST || 'localhost',
-  user: process.env.BD_USER || 'root',
-  password: process.env.BD_PASSWORD || '',
-  database: process.env.BD_NAME || 'bitacoras_db'
+  host: 'localhost',
+  user: 'root',
+  password: '', 
+  database: 'bitacoras_db'
 });
 
 db.connect((err) => {
@@ -156,7 +158,6 @@ app.post('/bitacoras/update/:id', (req, res) => {
   });
 });
 
-// start
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
